@@ -24,77 +24,94 @@
         CGFloat h = self.bounds.size.height;
         
         CGRect fr1 = CGRectMake(200, h-300, 100, 100);
+        UIView *fr1Container = [[UIView alloc] initWithFrame: fr1];
         frog1Views = [NSArray arrayWithObjects:
-                 [[Hidden alloc] initWithFrame: fr1],
-                 [[Frog alloc] initWithFrame: fr1],
-                 nil
-                 ];
-		frog1Index = 0;
-		[self addSubview: [frog1Views objectAtIndex: frog1Index]];
+                      [[Hidden alloc] initWithFrame: fr1Container.bounds],
+                      [[Frog alloc] initWithFrame: fr1Container.bounds],
+                      nil
+                      ];
+        frog1Index = 0;
+        [fr1Container addSubview: [frog1Views objectAtIndex: frog1Index]];
+        [self addSubview: fr1Container];
         
         CGRect fr2 = CGRectMake(0, h-200, 100, 100);
+        UIView *fr2Container = [[UIView alloc] initWithFrame: fr2];
         frog2Views = [NSArray arrayWithObjects:
-                      [[Hidden alloc] initWithFrame: fr2],
-                      [[Frog alloc] initWithFrame: fr2],
+                      [[Hidden alloc] initWithFrame: fr2Container.bounds],
+                      [[Frog alloc] initWithFrame: fr2Container.bounds],
                       nil
                       ];
 		frog2Index = 0;
-		[self addSubview: [frog2Views objectAtIndex: frog2Index]];
+		[fr2Container addSubview: [frog2Views objectAtIndex: frog2Index]];
+        [self addSubview: fr2Container];
         
         
         CGRect la1 = CGRectMake(100, h-300, 100, 100);
+        UIView *la1Container = [[UIView alloc] initWithFrame: la1];
         lady1Views = [NSArray arrayWithObjects:
-                     [[Hidden alloc] initWithFrame: la1],
-                     [[Lady alloc] initWithFrame: la1],
+                     [[Hidden alloc] initWithFrame: la1Container.bounds],
+                     [[Lady alloc] initWithFrame: la1Container.bounds],
                      nil
                      ];
 		lady1Index = 0;
-		[self addSubview: [lady1Views objectAtIndex: lady1Index]];
+		[la1Container addSubview: [lady1Views objectAtIndex: lady1Index]];
+        [self addSubview: la1Container];
         
         CGRect la2 = CGRectMake(200, h-100, 100, 100);
+        UIView *la2Container = [[UIView alloc] initWithFrame: la2];
         lady2Views = [NSArray arrayWithObjects:
-                      [[Hidden alloc] initWithFrame: la2],
-                      [[Lady alloc] initWithFrame: la2],
+                      [[Hidden alloc] initWithFrame: la2Container.bounds],
+                      [[Lady alloc] initWithFrame: la2Container.bounds],
                       nil
                       ];
 		lady2Index = 0;
-		[self addSubview: [lady2Views objectAtIndex: lady2Index]];
+		[la2Container addSubview: [lady2Views objectAtIndex: lady2Index]];
+        [self addSubview: la2Container];
+
         
         CGRect hi1 = CGRectMake(0, h-100, 100, 100);
+        UIView *hi1Container = [[UIView alloc] initWithFrame: hi1];
         hippo1Views = [NSArray arrayWithObjects:
-                     [[Hidden alloc] initWithFrame: hi1],
-                     [[Hippo alloc] initWithFrame: hi1],
+                     [[Hidden alloc] initWithFrame: hi1Container.bounds],
+                     [[Hippo alloc] initWithFrame: hi1Container.bounds],
                      nil
                      ];
 		hippo1Index = 0;
-		[self addSubview: [hippo1Views objectAtIndex: hippo1Index]];
+        [hi1Container addSubview: [hippo1Views objectAtIndex: hippo1Index]];
+        [self addSubview: hi1Container];
         
         CGRect hi2 = CGRectMake(200, h-200, 100, 100);
+        UIView *hi2Container = [[UIView alloc] initWithFrame: hi2];
         hippo2Views = [NSArray arrayWithObjects:
-                       [[Hidden alloc] initWithFrame: hi2],
-                       [[Hippo alloc] initWithFrame: hi2],
+                       [[Hidden alloc] initWithFrame: hi2Container.bounds],
+                       [[Hippo alloc] initWithFrame: hi2Container.bounds],
                        nil
                        ];
 		hippo2Index = 0;
-		[self addSubview: [hippo2Views objectAtIndex: hippo2Index]];
+		[hi2Container addSubview: [hippo2Views objectAtIndex: hippo2Index]];
+        [self addSubview: hi2Container];
         
         CGRect dy1 = CGRectMake(0, h-300, 100, 100);
+        UIView *dy1Container = [[UIView alloc] initWithFrame: dy1];
         dylan1Views = [NSArray arrayWithObjects:
-                     [[Hidden alloc] initWithFrame: dy1],
-                     [[Dylan alloc] initWithFrame: dy1],
+                     [[Hidden alloc] initWithFrame: dy1Container.bounds],
+                     [[Dylan alloc] initWithFrame: dy1Container.bounds],
                      nil
                      ];
 		dylan1Index = 0;
-		[self addSubview: [dylan1Views objectAtIndex: dylan1Index]];
+		[dy1Container addSubview: [dylan1Views objectAtIndex: dylan1Index]];
+        [self addSubview: dy1Container];
         
         CGRect dy2 = CGRectMake(100, h-100, 100, 100);
+        UIView *dy2Container = [[UIView alloc] initWithFrame: dy2];
         dylan2Views = [NSArray arrayWithObjects:
-                       [[Hidden alloc] initWithFrame: dy2],
-                       [[Dylan alloc] initWithFrame: dy2],
+                       [[Hidden alloc] initWithFrame: dy2Container.bounds],
+                       [[Dylan alloc] initWithFrame: dy2Container.bounds],
                        nil
                        ];
 		dylan2Index = 0;
-		[self addSubview: [dylan2Views objectAtIndex: dylan2Index]];
+        [dy2Container addSubview: [dylan2Views objectAtIndex: dylan2Index]];
+        [self addSubview: dy2Container];
 
         CGRect ap = CGRectMake(100, h-200, 100, 100);
         apple = [[Apple alloc] initWithFrame: ap];
@@ -123,7 +140,7 @@
         
         [UIView transitionFromView: [frog1Views objectAtIndex: frog1Index]
                             toView: [frog1Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -136,7 +153,7 @@
         
         [UIView transitionFromView: [frog2Views objectAtIndex: frog2Index]
                             toView: [frog2Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -149,7 +166,7 @@
         
         [UIView transitionFromView: [lady1Views objectAtIndex: lady1Index]
                             toView: [lady1Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -162,7 +179,7 @@
         
         [UIView transitionFromView: [lady2Views objectAtIndex: lady2Index]
                             toView: [lady2Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -175,7 +192,7 @@
         
         [UIView transitionFromView: [hippo1Views objectAtIndex: hippo1Index]
                             toView: [hippo1Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -188,7 +205,7 @@
         
         [UIView transitionFromView: [hippo2Views objectAtIndex: hippo2Index]
                             toView: [hippo2Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -201,7 +218,7 @@
         
         [UIView transitionFromView: [dylan1Views objectAtIndex: dylan1Index]
                             toView: [dylan1Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];
@@ -214,7 +231,7 @@
         
         [UIView transitionFromView: [dylan2Views objectAtIndex: dylan2Index]
                             toView: [dylan2Views objectAtIndex: newIndex]
-                          duration: 2.0
+                          duration: 1.0
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          ];

@@ -147,7 +147,7 @@
     return self;
 }
 
-- (void) matchCheck
+- (void) frogMatchCheck
 {
     if(frog1Clicked && frog2Clicked)
     {
@@ -159,7 +159,7 @@
         frog1NewIndex = 1 - frog1Index;
         [UIView transitionFromView: [frog1Views objectAtIndex: frog1Index]
                             toView: [frog1Views objectAtIndex: frog1NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -173,7 +173,7 @@
         frog2NewIndex = 1 - frog2Index;
         [UIView transitionFromView: [frog2Views objectAtIndex: frog2Index]
                             toView: [frog2Views objectAtIndex: frog2NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -181,6 +181,9 @@
         
         frog2Index = frog2NewIndex;
     }
+}
+- (void) ladyMatchCheck
+{
     if(lady1Clicked && lady2Clicked)
     {
         //do nothing, leave it in it's clicked state
@@ -191,7 +194,7 @@
         lady1NewIndex = 1 - lady1Index;
         [UIView transitionFromView: [lady1Views objectAtIndex: lady1Index]
                             toView: [lady1Views objectAtIndex: lady1NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -205,7 +208,7 @@
         lady2NewIndex = 1 - lady2Index;
         [UIView transitionFromView: [lady2Views objectAtIndex: lady2Index]
                             toView: [lady2Views objectAtIndex: lady2NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -213,6 +216,9 @@
         
         lady2Index = lady2NewIndex;
     }
+}
+- (void) hippoMatchCheck
+{
     if(hippo1Clicked && hippo2Clicked)
     {
         //do nothing, leave it in it's clicked state
@@ -223,7 +229,7 @@
         hippo1NewIndex = 1 - hippo1Index;
         [UIView transitionFromView: [hippo1Views objectAtIndex: hippo1Index]
                             toView: [hippo1Views objectAtIndex: hippo1NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -237,7 +243,7 @@
         hippo2NewIndex = 1 - hippo2Index;
         [UIView transitionFromView: [hippo2Views objectAtIndex: hippo2Index]
                             toView: [hippo2Views objectAtIndex: hippo2NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -245,6 +251,10 @@
         
         hippo2Index = hippo2NewIndex;
     }
+}
+
+- (void) dylanMatchCheck
+{
     if(dylan1Clicked && dylan2Clicked)
     {
         //do nothing, leave it in it's clicked state
@@ -255,7 +265,7 @@
         dylan1NewIndex = 1 - dylan1Index;
         [UIView transitionFromView: [dylan1Views objectAtIndex: dylan1Index]
                             toView: [dylan1Views objectAtIndex: dylan1NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -269,7 +279,7 @@
         dylan2NewIndex = 1 - dylan2Index;
         [UIView transitionFromView: [dylan2Views objectAtIndex: dylan2Index]
                             toView: [dylan2Views objectAtIndex: dylan2NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -297,7 +307,7 @@
         //transition from the question mark to the actual picture
         [UIView transitionFromView: [frog1Views objectAtIndex: frog1Index]
                             toView: [frog1Views objectAtIndex: frog1NewIndex]
-                          duration: 0.7
+                          duration: 0.5
                            options: UIViewAnimationOptionTransitionFlipFromLeft
                         completion: NULL
          
@@ -305,8 +315,8 @@
         
         frog1Index = frog1NewIndex;
         
-        [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+        [self performSelector: @selector(frogMatchCheck) withObject: nil
+                       afterDelay: 2.5];
     
         
         }
@@ -321,7 +331,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [frog2Views objectAtIndex: frog2Index]
                                 toView: [frog2Views objectAtIndex: frog2NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -329,8 +339,8 @@
         
             frog2Index = frog2NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(frogMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -344,7 +354,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [lady1Views objectAtIndex: lady1Index]
                                 toView: [lady1Views objectAtIndex: lady1NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -352,8 +362,8 @@
             
             lady1Index = lady1NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(ladyMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -367,7 +377,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [lady2Views objectAtIndex: lady2Index]
                                 toView: [lady2Views objectAtIndex: lady2NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -375,8 +385,8 @@
             
             lady2Index = lady2NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(ladyMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -390,7 +400,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [hippo1Views objectAtIndex: hippo1Index]
                                 toView: [hippo1Views objectAtIndex: hippo1NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -398,8 +408,8 @@
             
             hippo1Index = hippo1NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(hippoMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -413,7 +423,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [hippo2Views objectAtIndex: hippo2Index]
                                 toView: [hippo2Views objectAtIndex: hippo2NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -421,8 +431,8 @@
             
             hippo2Index = hippo2NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(hippoMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -436,7 +446,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [dylan1Views objectAtIndex: dylan1Index]
                                 toView: [dylan1Views objectAtIndex: dylan1NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -444,8 +454,8 @@
             
             dylan1Index = dylan1NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(dylanMatchCheck) withObject: nil
+                       afterDelay: 2.5];
             
         }
     }
@@ -459,7 +469,7 @@
             //transition from the question mark to the actual picture
             [UIView transitionFromView: [dylan2Views objectAtIndex: dylan2Index]
                                 toView: [dylan2Views objectAtIndex: dylan2NewIndex]
-                              duration: 0.7
+                              duration: 0.5
                                options: UIViewAnimationOptionTransitionFlipFromLeft
                             completion: NULL
              
@@ -467,8 +477,8 @@
             
             dylan2Index = dylan2NewIndex;
             
-            [self performSelector: @selector(matchCheck) withObject: nil
-                       afterDelay: 3.0];
+            [self performSelector: @selector(dylanMatchCheck) withObject: nil
+                       afterDelay: 2.5];
         }
     }
 }
